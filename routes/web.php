@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\AttendanceController;
+use App\Http\Controllers\BookController;
 use App\Http\Controllers\ClasseController;
 use App\Http\Controllers\ExamController;
 use App\Http\Controllers\FeeseController;
@@ -83,6 +84,8 @@ Route::group(
             Route::get('getsubject/{id}', [ExamController::class, 'getsubject'])->name('getsubject');
             //Questions
             Route::resource('questions', QuestionController::class);
+            //Books
+            Route::resource('books', BookController::class);
             // Online Classes
             Route::resource('online-classes', OnlineClasseController::class);
         });

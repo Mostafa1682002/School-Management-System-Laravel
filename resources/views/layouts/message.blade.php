@@ -24,6 +24,14 @@
         {{ trans('message.error') }}
     </div>
 @endif
+@if (session('errsyn'))
+    <div class="alert alert-danger" role="alert">
+        <button aria-label="Close" class="close" data-dismiss="alert" type="button">
+            <span aria-hidden="true">&times;</span>
+        </button>
+        {{ session('errsyn') }}
+    </div>
+@endif
 
 @if (session('save'))
     <div class="alert  alert-success" role="alert">

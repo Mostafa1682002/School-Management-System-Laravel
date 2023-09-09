@@ -3,6 +3,7 @@
 namespace App\Providers;
 
 use App\Interfaces\AttendanceRepositryInterface;
+use App\Interfaces\BookRepositryInterface;
 use App\Interfaces\ExamRepositryInterface;
 use App\Interfaces\FeesInvoiceRepositryInterface;
 use App\Interfaces\FeesRepositryInterface;
@@ -15,6 +16,7 @@ use App\Interfaces\StudentRepositryInterface;
 use App\Interfaces\SubjectRepositryInterface;
 use App\Interfaces\TeacherRepositryInterface;
 use App\Repositry\AttendanceRepositry;
+use App\Repositry\BookRepositry;
 use App\Repositry\ExamRepositry;
 use App\Repositry\FeesInvoiceRepositry;
 use App\Repositry\FeesRepositry;
@@ -46,6 +48,7 @@ class RepoServiceProvider extends ServiceProvider
         $this->app->bind(SubjectRepositryInterface::class, SubjectRepositry::class);
         $this->app->bind(ExamRepositryInterface::class, ExamRepositry::class);
         $this->app->bind(QuestionRepositryInterface::class, QuestionRepositry::class);
+        $this->app->bind(BookRepositryInterface::class, BookRepositry::class);
         $this->app->bind(OnlineClasseRepositryInterface::class, OnlineClasseRepositry::class);
     }
 

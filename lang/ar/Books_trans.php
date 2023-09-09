@@ -1,0 +1,26 @@
+<?php
+
+return [
+    'page_title' => "قائمة الكتب",
+    'add_page_title' => "اضافة كتاب جديد",
+    "edite_page_title" => "تعديل بيانات كتاب",
+    "delete_book" => "حذف الكتاب",
+    'file_name' => "الكتاب",
+    "book_name" => "اسم الكتاب",
+    "term" => "الترم",
+    "subject" => "الماده",
+    "grade" => "المرحله الدراسيه",
+    "classroom" => "الصف الدراسي",
+    "academic_year" => "السنه الدراسيه",
+    "name_teacher" => "اسم المعلم",
+    "processes" => "العمليات",
+    "show_book" => "عرض الكتاب",
+    "back" => "رجوع",
+    "warning_book" => "هل انت متاكد من عملية الحذف؟",
+    "delete" => 'حذف',
+    "edit" => "تعديل",
+    "save" => "حفظ",
+    "close" => "الغاء",
+    "download" => 'تحميل',
+    "choose" => "-- اختر من القائمة --",
+];

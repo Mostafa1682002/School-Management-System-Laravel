@@ -12,7 +12,7 @@ return [
     'Accounts' => 'Accounts',
     'Attendance' => 'Attendance',
     'Exams' => 'Exams',
-    'library' => 'Library',
+    'Books' => 'Books',
     'Onlineclasses' => 'Online classes',
     'Settings' => 'Settings',
     'Users' => 'Users',

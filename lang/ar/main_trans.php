@@ -12,7 +12,7 @@ return [
     'Accounts' => 'الحسابات',
     'Attendance' => 'الحضور والغياب',
     'Exams' => 'الامتحانات',
-    'library' => 'المكتبة',
+    'Books' => 'الكتب',
     'Onlineclasses' => 'حصص اونلاين',
     'Settings' => 'الاعدادات',
     'Users' => 'المستخدمين',

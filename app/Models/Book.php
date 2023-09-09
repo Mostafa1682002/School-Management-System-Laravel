@@ -4,27 +4,23 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
-use Spatie\Translatable\HasTranslations;
 
-class Subject extends Model
+class Book extends Model
 {
     use HasFactory;
-    use HasTranslations;
-
 
     protected $fillable = [
-        'subject_name',
+        'file_name',
         'school_grade_id',
-        'classe_id',
-        'teacher_id',
+        'classe_id', 'subject_id',
+        'term_id', 'academic_year'
     ];
 
-    public $translatable = ['subject_name'];
 
 
-    public function teacher()
+    public function subject()
     {
-        return $this->belongsTo(Teacher::class, 'teacher_id');
+        return $this->belongsTo(Subject::class, 'subject_id');
     }
     public function grade()
     {
@@ -34,8 +30,8 @@ class Subject extends Model
     {
         return $this->belongsTo(Classe::class, 'classe_id');
     }
-    public function book()
+    public function term()
     {
-        return $this->hasOne(Book::class, 'book_id');
+        return $this->belongsTo(Term::class, 'term_id');
     }
 }
