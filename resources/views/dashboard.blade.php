@@ -16,7 +16,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
     <!-- Title -->
     <title>{{ trans('Dashboard_trans.dashboard') }}</title>
-    @livewireStyles
     <!-- Favicon -->
     <link rel="shortcut icon" href="{{ URL::asset('assets/images/favicon.ico') }}" type="image/x-icon" />
 
@@ -40,10 +39,6 @@
 <body>
 
     <div class="wrapper">
-
-
-
-
         <div id="pre-loader">
             <img src="{{ asset('assets/images/pre-loader/loader-01.svg') }}" alt="">
         </div>

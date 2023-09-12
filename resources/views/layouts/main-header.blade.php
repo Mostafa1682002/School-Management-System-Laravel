@@ -39,7 +39,6 @@
                             <img src="{{ URL::asset('assets/images/flags/US.png') }}" alt="">
                         @endif
                     </button>
-
                     <div class="dropdown-menu">
                         @foreach (LaravelLocalization::getSupportedLocales() as $localeCode => $properties)
                             <a class="dropdown-item" rel="alternate" hreflang="{{ $localeCode }}"
