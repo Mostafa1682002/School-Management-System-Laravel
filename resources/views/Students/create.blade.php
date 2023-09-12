@@ -31,7 +31,7 @@
                     {{-- include Message --}}
                     @include('layouts.message')
                     {{-- include Message --}}
-                    <form method="post" action="{{ route('student.store') }}" enctype="multipart/form-data">
+                    <form method="post" action="{{ route('students.store') }}" enctype="multipart/form-data">
                         @csrf
                         <h6 style="font-family: 'Cairo', sans-serif;color: blue">
                             {{ trans('Student_trans.personal_information') }}</h6><br>

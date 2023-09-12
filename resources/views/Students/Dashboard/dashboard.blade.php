@@ -15,7 +15,7 @@
     <meta name="author" content="potenzaglobalsolutions.com" />
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
     <!-- Title -->
-    <title>{{ trans('Dashboard_trans.dashboard') }}</title>
+    <title>{{ trans('Dashboard_trans.dashboard_student') }}</title>
     @livewireStyles
     <!-- Favicon -->
     <link rel="shortcut icon" href="{{ URL::asset('assets/images/favicon.ico') }}" type="image/x-icon" />
@@ -27,6 +27,7 @@
     <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
         integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
     <!--- Style css -->
+    {{-- <link href="{{ URL::asset('assets/css/style.css') }}" rel="stylesheet"> --}}
     <link href="{{ URL::asset('assets/css/wizard.css') }}" rel="stylesheet">
 
     <!--- Style css -->
@@ -42,7 +43,7 @@
     <div class="wrapper">
 
 
-
+        {{-- preloader  --}}
 
         <div id="pre-loader">
             <img src="{{ asset('assets/images/pre-loader/loader-01.svg') }}" alt="">
@@ -57,7 +58,7 @@
             <div class="page-title">
                 <div class="row">
                     <div class="col-sm-6">
-                        <h4 class="mb-0">{{ trans('Dashboard_trans.dashboard') }}</h4>
+                        <h4 class="mb-0">{{ trans('Dashboard_trans.dashboard_student') }}</h4>
                         <br>
                     </div>
                     <div class="col-sm-6">
@@ -199,13 +200,19 @@
                                                 </a>
                                             </li>
 
-
+                                            {{-- <li class="nav-item">
+                                                <a class="nav-link" id="fee_invoices-tab" data-toggle="tab"
+                                                    href="#fee_invoices" role="tab" aria-controls="fee_invoices"
+                                                    aria-selected="false">الفواتير
+                                                </a>
+                                            </li> --}}
 
                                         </ul>
                                     </div>
                                 </div>
                                 <div class="tab-content" id="myTabContent">
 
+                                    {{-- students Table --}}
                                     <div class="tab-pane fade active show" id="students" role="tabpanel"
                                         aria-labelledby="students-tab">
                                         <div class="table-responsive mt-15">
@@ -245,6 +252,7 @@
                                         </div>
                                     </div>
 
+                                    {{-- teachers Table --}}
                                     <div class="tab-pane fade" id="teachers" role="tabpanel"
                                         aria-labelledby="teachers-tab">
                                         <div class="table-responsive mt-15">
@@ -280,7 +288,7 @@
                                         </div>
                                     </div>
 
-
+                                    {{-- parents Table --}}
                                     <div class="tab-pane fade" id="parents" role="tabpanel"
                                         aria-labelledby="parents-tab">
                                         <div class="table-responsive mt-15">
@@ -329,8 +337,6 @@
                 </div>
             </div>
 
-
-            @include('layouts.footer')
         </div>
     </div>
 

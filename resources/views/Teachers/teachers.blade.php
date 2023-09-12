@@ -31,7 +31,7 @@
                     {{-- include Message --}}
                     @include('layouts.message')
                     {{-- include Message --}}
-                    <a href="{{ route('teacher.create') }}" class="btn btn-success btn-sm" role="button"
+                    <a href="{{ route('teachers.create') }}" class="btn btn-success btn-sm" role="button"
                         aria-pressed="true">{{ trans('Teacher_trans.add_teacher') }}</a><br><br>
                     <div class="table-responsive">
                         <table id="datatable" class="table  table-hover table-sm table-bordered p-0" data-page-length="50"
@@ -55,8 +55,9 @@
                                         <td>{{ $teacher->created_at }}</td>
                                         <td>{{ $teacher->specialization->name_specializ }}</td>
                                         <td>
-                                            <a href="{{ route('teacher.edit', $teacher->id) }}" class="btn btn-info btn-sm"
-                                                role="button" aria-pressed="true"><i class="fa fa-edit"></i></a>
+                                            <a href="{{ route('teachers.edit', $teacher->id) }}"
+                                                class="btn btn-info btn-sm" role="button" aria-pressed="true"><i
+                                                    class="fa fa-edit"></i></a>
                                             <button type="button" class="btn btn-danger btn-sm" data-toggle="modal"
                                                 data-target="#delete_Teacher{{ $teacher->id }}"
                                                 title="{{ trans('Grades_trans.Delete') }}"><i class="fa fa-trash"></i>
@@ -67,7 +68,7 @@
                                     <div class="modal fade" id="delete_Teacher{{ $teacher->id }}" tabindex="-1"
                                         role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
                                         <div class="modal-dialog" role="document">
-                                            <form action="{{ route('teacher.destroy', $teacher->id) }}" method="post">
+                                            <form action="{{ route('teachers.destroy', $teacher->id) }}" method="post">
                                                 @csrf
                                                 @method('DELETE')
                                                 <div class="modal-content">

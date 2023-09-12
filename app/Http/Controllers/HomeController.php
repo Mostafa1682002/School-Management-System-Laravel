@@ -2,7 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Providers\RouteServiceProvider;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Hash;
 
 class HomeController extends Controller
 {
@@ -13,7 +16,8 @@ class HomeController extends Controller
      */
     public function __construct()
     {
-        $this->middleware('auth');
+        $this->middleware('auth')->except(['selection']);
+        $this->middleware('guest')->except('index');
     }
 
     /**
@@ -24,5 +28,11 @@ class HomeController extends Controller
     public function index()
     {
         return view('dashboard');
+    }
+
+
+    public function selection()
+    {
+        return view('auth.selection');
     }
 }

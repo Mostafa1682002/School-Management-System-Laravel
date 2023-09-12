@@ -31,7 +31,7 @@
                     {{-- include Message --}}
                     @include('layouts.message')
                     {{-- include Message --}}
-                    <a href="{{ route('student.create') }}" class="btn btn-success btn-sm" role="button"
+                    <a href="{{ route('students.create') }}" class="btn btn-success btn-sm" role="button"
                         aria-pressed="true">{{ trans('Student_trans.add_page_title') }}</a><br><br>
                     <div class="table-responsive">
                         <table id="datatable" class="table  table-hover table-sm table-bordered p-0" data-page-length="50"
@@ -68,13 +68,13 @@
                                                 <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
 
                                                     <a class="dropdown-item"
-                                                        href="{{ route('student.show', $student->id) }}"><i
+                                                        href="{{ route('students.show', $student->id) }}"><i
                                                             style="color: #ffc107" class="far fa-eye "></i>&nbsp;
                                                         {{ trans('Student_trans.show_student_details') }}
                                                     </a>
 
                                                     <a class="dropdown-item"
-                                                        href="{{ route('student.edit', $student->id) }}"><i
+                                                        href="{{ route('students.edit', $student->id) }}"><i
                                                             style="color:green" class="fa fa-edit"></i>&nbsp;
                                                         {{ trans('Student_trans.edite_page_title') }}
                                                     </a>
@@ -123,7 +123,7 @@
                                                     </button>
                                                 </div>
                                                 <div class="modal-body">
-                                                    <form action="{{ route('student.destroy', $student->id) }}"
+                                                    <form action="{{ route('students.destroy', $student->id) }}"
                                                         method="post">
                                                         @csrf
                                                         @method('DELETE')

@@ -3,7 +3,7 @@
     {{ trans('Myparent_trans.page_title') }}
 @endsection
 @section('css')
-    @livewireStyles
+    @livewireStyles()
 @endsection
 @section('page-header')
     <!-- breadcrumb -->
@@ -31,7 +31,8 @@
             <div class="card card-statistics h-100">
                 <div class="card-body">
                     @include('layouts.message')
-                    @livewire('add-parent')
+                    {{-- @livewire('parent1') --}}
+                    {{-- <livewire:add-parent /> --}}
                 </div>
             </div>
         </div>
@@ -39,5 +40,5 @@
     <!-- row closed -->
 @endsection
 @section('js')
-    @livewireScripts
+    @livewireScripts()
 @endsection

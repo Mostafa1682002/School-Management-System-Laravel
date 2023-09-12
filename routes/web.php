@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\AttendanceController;
+use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\BookController;
 use App\Http\Controllers\ClasseController;
 use App\Http\Controllers\ExamController;
@@ -18,9 +19,9 @@ use App\Http\Controllers\StudentAttachmentController;
 use App\Http\Controllers\TeacherController;
 use App\Http\Controllers\StudentController;
 use App\Http\Controllers\SubjectController;
-use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 use Mcamara\LaravelLocalization\Facades\LaravelLocalization;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -41,13 +42,11 @@ Route::group(
         'middleware' => ['localeSessionRedirect', 'localizationRedirect', 'localeViewPath']
     ],
     function () { //...
+        Route::get('/', [HomeController::class, 'selection'])->name('selection');
+        Route::get('/login/{type}', [LoginController::class, 'loginForm'])->name('login.selection');
+        Route::post('/login', [LoginController::class, 'login'])->name('login');
+        Route::post('/logout/{type}', [LoginController::class, 'logout'])->name('logout');
 
-        Route::get('/', function () {
-            return view('auth.login');
-        })->middleware('guest');
-
-
-        Auth::routes();
 
         Route::group(['middleware' => ['auth']], function () {
             Route::get('/dashboard', [HomeController::class, 'index'])->name('dashboard');
@@ -58,9 +57,9 @@ Route::group(
             Route::get('getclass/{id}', [SectionController::class, 'getClass'])->name('getclass');
             Route::get('getSections/{id}', [SectionController::class, 'getSections'])->name('getSections');
             Route::view('add_parent', 'Myparents.form_add_parent')->name('add_parent');
-            Route::resource('teacher', TeacherController::class);
+            Route::resource('teachers', TeacherController::class);
             //Students
-            Route::resource('student', StudentController::class);
+            Route::resource('students', StudentController::class);
             Route::resource('studentAttachment', StudentAttachmentController::class);
             Route::get('downloadStudentAttachment/{id}/{name}', [StudentAttachmentController::class, 'downloadStudentAttachment'])->name('downloadStudentAttachment');
             //Promotions

@@ -13,7 +13,7 @@
 
 <body>
 
-    <div class="wrapper">
+    <div class="wrapper" style="min-height: 100vh">
 
         <!--=================================
  preloader -->

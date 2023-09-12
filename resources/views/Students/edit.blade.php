@@ -31,7 +31,8 @@
                     {{-- include Message --}}
                     @include('layouts.message')
                     {{-- include Message --}}
-                    <form method="post" action="{{ route('student.update', $student->id) }}" enctype="multipart/form-data">
+                    <form method="post" action="{{ route('students.update', $student->id) }}"
+                        enctype="multipart/form-data">
                         @csrf
                         @method('PUT')
                         <h6 style="font-family: 'Cairo', sans-serif;color: blue">

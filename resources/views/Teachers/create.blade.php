@@ -31,7 +31,7 @@
                     {{-- include Message --}}
                     @include('layouts.message')
                     {{-- include Message --}}
-                    <form action="{{ route('teacher.store') }}" method="post">
+                    <form action="{{ route('teachers.store') }}" method="post">
                         @csrf
                         <div class="form-row">
                             <div class="col">
