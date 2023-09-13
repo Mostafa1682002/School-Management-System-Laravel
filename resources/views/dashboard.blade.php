@@ -16,6 +16,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
     <!-- Title -->
     <title>{{ trans('Dashboard_trans.dashboard') }}</title>
+    @livewireStyles
     <!-- Favicon -->
     <link rel="shortcut icon" href="{{ URL::asset('assets/images/favicon.ico') }}" type="image/x-icon" />
 
@@ -324,13 +325,15 @@
                 </div>
             </div>
 
+            <livewire:calendar />
 
-            @include('layouts.footer')
         </div>
+        @include('layouts.footer')
     </div>
 
     <!--=================================footer -->
-
+    @livewireScripts
+    @stack('scripts')
     <!-- jquery -->
     <script src="{{ URL::asset('assets/js/jquery-3.3.1.min.js') }}"></script>
     <!-- plugins-jquery -->
@@ -339,13 +342,11 @@
     <script type="text/javascript">
         var plugin_path = "{{ asset('assets/js') }}/";
     </script>
-
     <!-- chart -->
     <script src="{{ URL::asset('assets/js/chart-init.js') }}"></script>
     <!-- calendar -->
     <script src="{{ URL::asset('assets/js/calendar.init.js') }}"></script>
     <!-- charts sparkline -->
-
     <script src="{{ URL::asset('assets/js/sparkline.init.js') }}"></script>
     <!-- charts morris -->
     <script src="{{ URL::asset('assets/js/morris.init.js') }}"></script>
@@ -360,7 +361,6 @@
     <script src="{{ URL::asset('assets/js/lobilist.js') }}"></script>
     <!-- custom -->
     <script src="{{ URL::asset('assets/js/custom.js') }}"></script>
-
 </body>
 
 </html>

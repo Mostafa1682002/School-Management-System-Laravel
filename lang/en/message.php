@@ -10,4 +10,5 @@ return [
     "returned_prom" => "The student's promotion was successfully rolled back",
     "returned_graduted" => "The student's Graduation was successfully rolled back",
     "returned_prom_all" => "All students have been successfully rolled back",
+    "invalid" => "The Data Is Incorrect"
 ];

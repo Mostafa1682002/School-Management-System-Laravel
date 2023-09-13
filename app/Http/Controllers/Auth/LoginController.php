@@ -63,7 +63,6 @@ class LoginController extends Controller
 
 
         if (Auth::guard($request->type)->attempt(['email' => $request->email, 'password' => $request->password])) {
-
             if ($request->type == 'student') {
                 // return $request;
                 return redirect()->intended(RouteServiceProvider::STUDENT);
@@ -75,7 +74,7 @@ class LoginController extends Controller
                 return redirect()->intended(RouteServiceProvider::HOME);
             }
         }
-        return redirect()->route('login.selection', $request->type)->withInput($request->only(['email', 'remember']));
+        return redirect()->route('login.selection', $request->type)->withInput($request->only(['email', 'remember']))->with('invalid', '444');
     }
 
 

@@ -27,6 +27,19 @@
                                 {{ trans('Selection_trans.title_login') }} {{ trans('Selection_trans.admin') }}
                             </h3>
                         @endif
+
+
+                        {{-- include Message --}}
+
+                        @if (session('invalid'))
+                            <div class="alert alert-danger" role="alert">
+                                <button aria-label="Close" class="close" data-dismiss="alert" type="button">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                                {{ trans('message.invalid') }}
+                            </div>
+                        @endif
+                        {{-- include Message --}}
                         <form action="{{ route('login') }}" method="POST">
                             @csrf
                             @method('POST')
