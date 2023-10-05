@@ -34,6 +34,9 @@ class Subject extends Model
     {
         return $this->belongsTo(Classe::class, 'classe_id');
     }
+    public  function exams(){
+        return $this->hasMany(Exam::class,'subject_id');
+    }
     public function book()
     {
         return $this->hasOne(Book::class, 'book_id');

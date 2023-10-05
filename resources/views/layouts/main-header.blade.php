@@ -32,10 +32,10 @@
                     <button type="button" class="btn btn-light btn-sm dropdown-toggle" data-toggle="dropdown"
                         aria-haspopup="true" aria-expanded="false">
                         @if (App::getLocale() == 'ar')
-                            {{ LaravelLocalization::getCurrentLocaleName() }}
+                            {{ LaravelLocalization::getCurrentLocaleNative() }}
                             <img src="{{ URL::asset('assets/images/flags/EG.png') }}" alt="">
                         @else
-                            {{ LaravelLocalization::getCurrentLocaleName() }}
+                            {{ LaravelLocalization::getCurrentLocaleNative() }}
                             <img src="{{ URL::asset('assets/images/flags/US.png') }}" alt="">
                         @endif
                     </button>
@@ -113,10 +113,27 @@
                     <div class="dropdown-menu dropdown-menu-right">
                         <div class="dropdown-header">
                             <div class="media">
-                                <div class="media-body">
-                                    <h5 class="mt-0 mb-0">Michael Bean</h5>
-                                    <span>michael-bean@mail.com</span>
-                                </div>
+                                @if(auth('web')->check() )
+                                    <div class="media-body">
+                                        <h5 class="mt-0 mb-0">{{auth('web')->user()->name}}</h5>
+                                        <span>{{auth('web')->user()->email}}</span>
+                                    </div>
+                                @elseif(auth('teacher')->check())
+                                    <div class="media-body">
+                                        <h5 class="mt-0 mb-0">{{auth('teacher')->user()->name_teacher}}</h5>
+                                        <span>{{auth('teacher')->user()->email}}</span>
+                                    </div>
+                                @elseif(auth('student')->check())
+                                    <div class="media-body">
+                                        <h5 class="mt-0 mb-0">{{auth('student')->user()->student_name}}</h5>
+                                        <span>{{auth('student')->user()->email}}</span>
+                                    </div>
+                                @elseif(auth('parent')->check())
+                                    <div class="media-body">
+                                        <h5 class="mt-0 mb-0">{{auth('parent')->user()->name_father}}</h5>
+                                        <span>{{auth('parent')->user()->email}}</span>
+                                    </div>
+                                @endif
                             </div>
                         </div>
                         <div class="dropdown-divider"></div>

@@ -71,7 +71,7 @@ class SectionController extends Controller
         $section->status =  $request->status;
         $section->classe_id = $request->class_id;
         $section->save();
-        $section->teachers()->syncWithoutDetaching($request->teacher_id);
+        $section->teachers()->sync($request->teacher_id);
         return redirect()->back()->with('update', '11');
     }
 

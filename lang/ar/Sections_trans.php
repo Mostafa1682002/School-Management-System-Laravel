@@ -22,7 +22,9 @@ return [
 
     "status_section_no" => "غير نشط",
     "status_section_ac" => "نشط",
-
+    "num_students"=>'عدد الطلاب',
+    'list_students'=>'قائمة الطلاب',
+    'students'=>'الطلاب',
 
 
     "name_teacher"=>"المعلم"

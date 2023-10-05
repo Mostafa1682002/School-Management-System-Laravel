@@ -120,7 +120,7 @@
                                                                                 <div class="modal-body">
 
                                                                                     <form
-                                                                                        action="{{ route('section.update', $section->id) }}"
+                                                                                        action="{{ route('sections.update', $section->id) }}"
                                                                                         method="POST">
                                                                                         @csrf
                                                                                         @method('PUT')
@@ -263,7 +263,7 @@
                                                                                 </div>
                                                                                 <div class="modal-body">
                                                                                     <form
-                                                                                        action="{{ route('section.destroy', $section->id) }}"
+                                                                                        action="{{ route('sections.destroy', $section->id) }}"
                                                                                         method="post">
                                                                                         @csrf
                                                                                         @method('DELETE')
@@ -313,7 +313,7 @@
                         </div>
                         <div class="modal-body">
 
-                            <form action="{{ route('section.store') }}" method="POST">
+                            <form action="{{ route('sections.store') }}" method="POST">
                                 @csrf
                                 <div class="row p-2">
                                     <div class="col">

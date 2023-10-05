@@ -32,7 +32,7 @@ class TeacherRepositry implements TeacherRepositryInterface
         } catch (\Exception $e) {
             return redirect()->back()->with('error', '000');
         }
-        return redirect()->route('teacher.index')->with('save', '000');
+        return redirect()->route('teachers.index')->with('save', '000');
     }
 
 
@@ -42,16 +42,18 @@ class TeacherRepositry implements TeacherRepositryInterface
             $teacher = Teacher::findOrFail($id);
             $teacher->update([
                 'email' => $data->email,
+
                 'password' => Hash::make($data->password),
                 'name_teacher' => ['ar' => $data->name_ar, 'en' => $data->name_en],
                 "specialization_id" => $data->specialization_id,
                 "gender_id" => $data->gender_id,
                 "address" => $data->address
             ]);
+            return redirect()->route('teachers.index')->with('update', '000');
         } catch (\Exception $e) {
             return redirect()->back()->with('error', '000');
         }
-        return redirect()->route('teacher.index')->with('update', '000');
+
     }
 
 
@@ -61,9 +63,10 @@ class TeacherRepositry implements TeacherRepositryInterface
         try {
             $teacher = Teacher::findOrFail($id);
             $teacher->delete();
+            return redirect()->route('teachers.index')->with('delete', '000');
         } catch (\Exception $e) {
             return redirect()->back()->with('error', '000');
         }
-        return redirect()->route('teacher.index')->with('delete', '000');
+
     }
 }

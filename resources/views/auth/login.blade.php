@@ -76,7 +76,8 @@
                             </div>
                             <div class="form-group col">
                                 <div class="remember-checkbox mb-30">
-                                    <input type="checkbox" class="form-control" name="two" id="two" />
+                                    <input type="checkbox" class="form-control" name="remember" id="two"
+                                        value="1" />
                                     <label for="two">{{ trans('Selection_trans.remember') }}</label>
                                     <a href="#" class="float-right">{{ trans('Selection_trans.forget') }}</a>
                                 </div>

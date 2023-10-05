@@ -41,7 +41,7 @@ return new class extends Migration
             $table->foreignId('type_blood_mother_id')->constrained('type__bloods')->cascadeOnDelete();
 
 
-
+            $table->rememberToken();
             $table->timestamps();
         });
     }

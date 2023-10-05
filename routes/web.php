@@ -48,12 +48,12 @@ Route::group(
         Route::post('/logout/{type}', [LoginController::class, 'logout'])->name('logout');
 
 
-        Route::group(['middleware' => ['auth']], function () {
+        Route::group(['middleware' => ['auth'],'prefix'=>'admin'], function () {
             Route::get('/dashboard', [HomeController::class, 'index'])->name('dashboard');
             Route::resource('schoolGrade', SchoolGradeController::class);
             Route::resource('classes', ClasseController::class);
             Route::delete('deleteSelect', [ClasseController::class, 'deleteSelect'])->name('classes.deleteSelect');
-            Route::resource('section', SectionController::class);
+            Route::resource('sections', SectionController::class);
             Route::get('getclass/{id}', [SectionController::class, 'getClass'])->name('getclass');
             Route::get('getSections/{id}', [SectionController::class, 'getSections'])->name('getSections');
             Route::view('add_parent', 'Myparents.form_add_parent')->name('add_parent');
@@ -87,6 +87,10 @@ Route::group(
             Route::resource('books', BookController::class);
             // Online Classes
             Route::resource('online-classes', OnlineClasseController::class);
+
+            Route::fallback(function (){
+                return redirect('admin/dashboard');
+            });
         });
     }
 );

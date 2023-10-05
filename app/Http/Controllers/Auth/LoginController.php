@@ -61,8 +61,7 @@ class LoginController extends Controller
             'password' => 'required|string',
         ]);
 
-
-        if (Auth::guard($request->type)->attempt(['email' => $request->email, 'password' => $request->password])) {
+        if (Auth::guard($request->type)->attempt(['email' => $request->email, 'password' => $request->password], $request->remember)) {
             if ($request->type == 'student') {
                 // return $request;
                 return redirect()->intended(RouteServiceProvider::STUDENT);

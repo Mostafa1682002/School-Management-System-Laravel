@@ -22,7 +22,6 @@ class StoreTeacher extends FormRequest
     public function rules(): array
     {
         return [
-
             "email" => ["required", "email", "unique:teachers,email,$this->teacher"],
             "password" => ['required', 'string', 'min:5'],
             "name_ar" => ['required', 'regex:/^[\p{Arabic} ]+/u'],

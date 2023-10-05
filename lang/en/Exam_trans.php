@@ -23,4 +23,6 @@ return [
     "save" => "Save",
     "close" => "Close",
     "choose" => "Choose From The List",
+    "add_questions"=>'Add Questions',
+    ''
 ];

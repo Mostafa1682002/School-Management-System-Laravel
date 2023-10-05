@@ -114,7 +114,7 @@ class StudentRepositry implements StudentRepositryInterface
                 "parent_id" => $data->parent_id,
                 "academic_year" => $data->academic_year,
             ]);
-            return redirect()->route('student.index')->with('update', '111');
+            return redirect()->route('students.index')->with('update', '111');
         } catch (Exception $e) {
             return redirect()->back()->with('error', '111');
         }

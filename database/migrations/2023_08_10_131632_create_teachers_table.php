@@ -19,6 +19,7 @@ return new class extends Migration
             $table->foreignId('gender_id')->constrained('genders')->cascadeOnDelete()->cascadeOnUpdate();
             $table->foreignId('specialization_id')->constrained('specializations')->cascadeOnDelete()->cascadeOnUpdate();
             $table->string('address');
+            $table->rememberToken();
             $table->timestamps();
             $table->softDeletes();
         });

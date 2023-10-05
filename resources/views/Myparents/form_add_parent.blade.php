@@ -32,7 +32,7 @@
                 <div class="card-body">
                     @include('layouts.message')
                     {{-- @livewire('parent1') --}}
-                    {{-- <livewire:add-parent /> --}}
+                     <livewire:add-parent />
                 </div>
             </div>
         </div>
